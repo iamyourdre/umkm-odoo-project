@@ -72,5 +72,4 @@ class UmkmOrder(models.Model):
         self.status = 'done'
 
     def action_cancel(self):
-        # add logic to return stock if needed
         self.status = 'canceled'

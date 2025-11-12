@@ -4,8 +4,8 @@ import json
 
 class UmkmApi(http.Controller):
     
-    # /api/menu/list (GET)
-    @http.route('/api/menu/list', type='json', auth='public', methods=['GET'], csrf=False)
+    # /api/menu/list (POST)
+    @http.route('/api/menu/list', type='json', auth='public', methods=['POST'], csrf=False)
     def menu_list(self):
         menus = request.env['umkm.menu'].sudo().search_read(
             domain=[('is_available', '=', True)],
@@ -26,10 +26,7 @@ class UmkmApi(http.Controller):
 
     # /api/order/create (POST)
     @http.route('/api/order/create', type='json', auth='public', methods=['POST'], csrf=False)
-    def order_create(self):
-        data = request.jsonrequest
-        customer_name = data.get('customer_name')
-        items = data.get('items')
+    def order_create(self, customer_name=None, items=None):
 
         if not customer_name or not items:
             return {'success': False, 'message': 'Nama pelanggan dan item pesanan wajib diisi.'}
@@ -44,7 +41,7 @@ class UmkmApi(http.Controller):
                 return {'success': False, 'message': 'Detail item tidak valid.'}
             
             menu = request.env['umkm.menu'].sudo().browse(menu_id)
-            if not menu or not menu.is_available:
+            if not menu.exists() or not menu.is_available:
                 return {'success': False, 'message': f"Menu ID {menu_id} tidak ditemukan atau tidak tersedia."}
                 
             if menu.stock < quantity:
@@ -61,10 +58,9 @@ class UmkmApi(http.Controller):
             order_vals = {
                 'customer_name': customer_name,
                 'order_line_ids': order_lines,
-                'user_id': request.env.user.id # created by Public/Guest user
+                'user_id': request.env.user.id # by public
             }
             
-            # Using .sudo() to ensure public user can create order
             new_order = request.env['umkm.order'].sudo().create(order_vals)
             
             new_order.sudo().action_confirm()

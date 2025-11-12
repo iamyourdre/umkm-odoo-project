@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 class UmkmMenu(models.Model):
     _name = 'umkm.menu'
     _description = 'Menu dan Stok Produk'
+    _inherit = ['mail.thread']
 
     name = fields.Char(string='Nama Menu', required=True)
     category_id = fields.Many2one('umkm.menu.category', string='Kategori')

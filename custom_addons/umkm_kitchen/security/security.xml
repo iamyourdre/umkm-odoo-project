@@ -4,7 +4,6 @@
         <field name="sequence">10</field>
     </record>
 
-    <!-- Define group_umkm_cashier first so it can be referenced by group_umkm_admin -->
     <record id="group_umkm_cashier" model="res.groups">
         <field name="name">Kasir</field>
         <field name="category_id" ref="module_category_umkm"/>
@@ -21,6 +20,17 @@
         <field name="name">Viewer / Finance</field>
         <field name="category_id" ref="module_category_umkm"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="order_rule_admin" model="ir.rule">
+        <field name="name">Admin Lihat Semua Order</field>
+        <field name="model_id" ref="model_umkm_order"/>
+        <field name="groups" eval="[(4, ref('group_umkm_admin'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
     </record>
 
     <record id="order_rule_cashier" model="ir.rule">
