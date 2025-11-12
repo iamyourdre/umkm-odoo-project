@@ -7,7 +7,7 @@
     <menuitem id="menu_umkm_dashboard"
         name="Dashboard"
         parent="menu_umkm_root"
-        sequence="10"/>
+        action="action_umkm_dashboard" sequence="10"/>
 
     <menuitem id="menu_umkm_operations"
         name="Operasional"

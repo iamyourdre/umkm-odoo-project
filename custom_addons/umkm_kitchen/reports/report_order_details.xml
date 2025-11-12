@@ -1,0 +1,12 @@
+<odoo>
+    <record id="action_report_umkm_order" model="ir.actions.report">
+        <field name="name">Laporan Pesanan</field>
+        <field name="model">umkm.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">umkm_kitchen.report_umkm_order_document</field>
+        <field name="report_file">umkm_kitchen.report_umkm_order_document</field>
+        <field name="print_report_name">'Pesanan - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_umkm_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
