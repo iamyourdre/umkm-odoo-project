@@ -1,13 +1,14 @@
 <odoo>
     <menuitem id="menu_umkm_root"
         name="UMKM Kitchen"
-        sequence="10"
-        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier,umkm_kitchen.group_umkm_viewer"/>
+        sequence="10"/>
 
     <menuitem id="menu_umkm_dashboard"
         name="Dashboard"
         parent="menu_umkm_root"
-        action="action_umkm_dashboard" sequence="10"/>
+        action="action_umkm_dashboard" 
+        sequence="10"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier,umkm_kitchen.group_umkm_viewer"/>
 
     <menuitem id="menu_umkm_operations"
         name="Operasional"

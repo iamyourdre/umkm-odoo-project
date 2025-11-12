@@ -1,0 +1,5 @@
+*.pyc
+*.log
+.vscode/
+db-data/ 
+.odoosession

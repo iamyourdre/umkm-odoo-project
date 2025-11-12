@@ -4,15 +4,17 @@
         <field name="sequence">10</field>
     </record>
 
+    <!-- Define group_umkm_cashier first so it can be referenced by group_umkm_admin -->
+    <record id="group_umkm_cashier" model="res.groups">
+        <field name="name">Kasir</field>
+        <field name="category_id" ref="module_category_umkm"/>
+    </record>
+
     <record id="group_umkm_admin" model="res.groups">
         <field name="name">Admin</field>
         <field name="category_id" ref="module_category_umkm"/>
         <field name="implied_ids" eval="[(4, ref('group_umkm_cashier'))]"/>
-    </record>
-
-    <record id="group_umkm_cashier" model="res.groups">
-        <field name="name">Kasir</field>
-        <field name="category_id" ref="module_category_umkm"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
     </record>
 
     <record id="group_umkm_viewer" model="res.groups">

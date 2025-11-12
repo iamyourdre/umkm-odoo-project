@@ -30,11 +30,11 @@
             <form string="Detail Pesanan">
                 <header>
                     <button name="action_confirm" string="Konfirmasi Pesanan" type="object" 
-                            attrs="{'invisible': [('status', '!=', 'draft')]}" class="oe_highlight"/>
+                            invisible="status != 'draft'" class="oe_highlight"/>
                     <button name="action_done" string="Selesaikan" type="object" 
-                            attrs="{'invisible': [('status', '!=', 'confirmed')]}"/>
+                            invisible="status != 'confirmed'"/>
                     <button name="action_cancel" string="Batalkan" type="object" 
-                            attrs="{'invisible': [('status', 'in', ('done', 'canceled'))]}"/>
+                            invisible="status in ('done', 'canceled')"/>
                     <field name="status" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
                 </header>
                 <sheet>

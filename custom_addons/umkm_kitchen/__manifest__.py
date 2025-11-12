@@ -11,10 +11,11 @@
         'security/ir.model.access.csv',
         'data/order_sequence.xml', 
 
-        'views/menus.xml', 
+        'views/dashboard_views.xml',
         'views/menu_category_views.xml',
         'views/menu_views.xml',
-        'views/order_views.xml','views/dashboard_views.xml',
+        'views/order_views.xml',
+        'views/menus.xml', 
         
         'reports/report_order_details.xml',
         'reports/report_order_template.xml',
