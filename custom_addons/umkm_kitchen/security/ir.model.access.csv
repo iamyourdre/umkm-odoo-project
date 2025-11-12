@@ -1,0 +1,27 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+# 1. superuser (semua model)
+access_umkm_category_all,UMKM Menu Category All,model_umkm_menu_category,,1,1,1,1
+access_umkm_menu_all,UMKM Menu All,model_umkm_menu,,1,1,1,1
+access_umkm_order_all,UMKM Order All,model_umkm_order,,1,1,1,1
+access_umkm_order_line_all,UMKM Order Line All,model_umkm_order_line,,1,1,1,1
+
+# 2. ADMIN
+access_umkm_category_admin,UMKM Menu Category Admin,model_umkm_menu_category,umkm_kitchen.group_umkm_admin,1,1,1,1
+access_umkm_menu_admin,UMKM Menu Admin,model_umkm_menu,umkm_kitchen.group_umkm_admin,1,1,1,1
+access_umkm_order_admin,UMKM Order Admin,model_umkm_order,umkm_kitchen.group_umkm_admin,1,1,1,1
+access_umkm_order_line_admin,UMKM Order Line Admin,model_umkm_order_line,umkm_kitchen.group_umkm_admin,1,1,1,1
+
+# 3. KASIR
+# READ Menu & Category. CREATE/READ/WRITE Order (Unlink TIDAK).
+access_umkm_category_cashier,UMKM Menu Category Cashier,model_umkm_menu_category,umkm_kitchen.group_umkm_cashier,1,0,0,0
+access_umkm_menu_cashier,UMKM Menu Cashier,model_umkm_menu,umkm_kitchen.group_umkm_cashier,1,0,0,0
+access_umkm_order_cashier,UMKM Order Cashier,model_umkm_order,umkm_kitchen.group_umkm_cashier,1,1,1,0
+access_umkm_order_line_cashier,UMKM Order Line Cashier,model_umkm_order_line,umkm_kitchen.group_umkm_cashier,1,1,1,0
+
+# 4. VIEWER/FINANCE
+# READ (semua data).
+access_umkm_category_viewer,UMKM Menu Category Viewer,model_umkm_menu_category,umkm_kitchen.group_umkm_viewer,1,0,0,0
+access_umkm_menu_viewer,UMKM Menu Viewer,model_umkm_menu,umkm_kitchen.group_umkm_viewer,1,0,0,0
+access_umkm_order_viewer,UMKM Order Viewer,model_umkm_order,umkm_kitchen.group_umkm_viewer,1,0,0,0
+access_umkm_order_line_viewer,UMKM Order Line Viewer,model_umkm_order_line,umkm_kitchen.group_umkm_viewer,1,0,0,0

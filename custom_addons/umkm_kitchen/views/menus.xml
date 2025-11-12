@@ -1,0 +1,44 @@
+<odoo>
+    <menuitem id="menu_umkm_root"
+        name="UMKM Kitchen"
+        sequence="10"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier,umkm_kitchen.group_umkm_viewer"/>
+
+    <menuitem id="menu_umkm_dashboard"
+        name="Dashboard"
+        parent="menu_umkm_root"
+        sequence="10"/>
+
+    <menuitem id="menu_umkm_operations"
+        name="Operasional"
+        parent="menu_umkm_root"
+        sequence="20"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier"/>
+
+    <menuitem id="menu_umkm_category"
+        name="Kategori Menu"
+        parent="menu_umkm_operations"
+        action="action_umkm_menu_category"
+        sequence="10"
+        groups="umkm_kitchen.group_umkm_admin"/>
+
+    <menuitem id="menu_umkm_menu"
+        name="Daftar Menu"
+        parent="menu_umkm_operations"
+        action="action_umkm_menu"
+        sequence="20"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier"/>
+
+    <menuitem id="menu_umkm_order"
+        name="Pesanan Pelanggan"
+        parent="menu_umkm_operations"
+        action="action_umkm_order"
+        sequence="30"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_cashier,umkm_kitchen.group_umkm_viewer"/>
+
+    <menuitem id="menu_umkm_reports"
+        name="Laporan"
+        parent="menu_umkm_root"
+        sequence="30"
+        groups="umkm_kitchen.group_umkm_admin,umkm_kitchen.group_umkm_viewer"/>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <record id="action_umkm_menu_category" model="ir.actions.act_window">
+        <field name="name">Kategori Menu</field>
+        <field name="res_model">umkm.menu.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_umkm_menu_category_tree" model="ir.ui.view">
+        <field name="name">umkm.menu.category.tree</field>
+        <field name="model">umkm.menu.category</field>
+        <field name="arch" type="xml">
+            <tree string="Kategori Menu">
+                <field name="name"/>
+                <field name="menu_ids" widget="list_number"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

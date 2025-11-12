@@ -1,0 +1,11 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_umkm_order" model="ir.sequence">
+            <field name="name">UMKM Order Sequence</field>
+            <field name="code">umkm.order</field>
+            <field name="prefix">ORDER/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
