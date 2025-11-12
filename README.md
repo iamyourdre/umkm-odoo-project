@@ -29,12 +29,6 @@
 
 ### A. Business Logic & Workflow
 
-<!-- | Fokus | Skenario | Bukti Screenshot |
-| :--- | :--- | :--- |
-| **1. Pengurangan Stok Otomatis** | 1. Tunjukkan **Stok Awal** Menu A. 2. Buat & **Konfirmasi** Order yang berisi Menu A. | 1. **Menu Form View** (Stok Awal). 2. **Menu Form View** (Stok setelah Order dikonfirmasi - **Tunjukkan stok berkurang**). |
-| **2. Low Stock Alert** | Kurangi stok hingga **dibawah threshold**. | **Menu Form View** - Tunjukkan notifikasi *chatter* (di bagian bawah) yang berisi pesan Peringatan Stok Rendah. |
-| **3. Pencegahan Order** | Coba **Konfirmasi** Order di mana jumlah yang dipesan melebihi stok yang tersisa. | Tampilan **Error Message** Odoo (`UserError`) yang muncul saat konfirmasi gagal. | -->
-
 1. **Pengurangan Stok Otomatis**
 
 - **Stok Awal**
